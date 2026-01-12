@@ -1,0 +1,823 @@
+/* CNX Concierge Brand Manual — Shared Styles */
+
+:root {
+    /* Color Palette 2: CNX Deep Navy */
+    --color-navy: #0c2b5c;
+    --color-light-paper: #f7f8fb;
+    --color-harbor-gray: #59647a;
+    --color-lavender: #76235f;
+    --color-ink: #1a1a1a;
+    --color-white: #ffffff;
+    --color-border: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trirong', Georgia, serif;
+    color: var(--color-ink);
+    line-height: 1.7;
+    background: var(--color-light-paper);
+}
+
+.manual-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 280px;
+    background: var(--color-white);
+    border-right: 1px solid var(--color-border);
+    padding: 2rem 1.5rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.nav-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav-header .wordmark {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+}
+
+.nav-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-harbor-gray);
+    font-style: italic;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--color-ink);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+.nav-menu a:hover {
+    background: var(--color-light-paper);
+    border-left-color: var(--color-harbor-gray);
+}
+
+.nav-menu a.active {
+    color: var(--color-navy);
+    border-left-color: var(--color-navy);
+    font-weight: 600;
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    max-width: 1000px;
+    padding: 4rem 3rem;
+    margin: 0 auto;
+}
+
+.page-header {
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--color-harbor-gray);
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--color-harbor-gray);
+    font-style: italic;
+}
+
+/* Typography */
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    margin: 3rem 0 1.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    margin: 2rem 0 1rem;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-ink);
+    margin-bottom: 3rem;
+}
+
+/* Sections */
+.intro-section {
+    margin-bottom: 4rem;
+}
+
+.specifications-overview {
+    margin-bottom: 4rem;
+}
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.spec-card {
+    background: var(--color-white);
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+}
+
+.spec-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.spec-card p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.spec-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-lavender);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-lavender);
+    padding-bottom: 2px;
+}
+
+.spec-link:hover {
+    color: var(--color-navy);
+    border-bottom-color: var(--color-navy);
+}
+
+.quick-links {
+    margin-bottom: 4rem;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.quick-link {
+    display: block;
+    background: var(--color-white);
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.quick-link:hover {
+    border-color: var(--color-navy);
+    box-shadow: 0 2px 8px rgba(12, 43, 92, 0.1);
+}
+
+.quick-link h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-navy);
+}
+
+.quick-link p {
+    font-size: 0.95rem;
+    color: var(--color-harbor-gray);
+    margin: 0;
+}
+
+.usage-principles {
+    margin-bottom: 4rem;
+}
+
+.principles-list {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.principle {
+    padding: 2rem;
+    background: var(--color-white);
+    border-left: 4px solid var(--color-navy);
+}
+
+.principle h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+.principle p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Footer */
+.page-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    color: var(--color-harbor-gray);
+    font-size: 0.9rem;
+}
+
+.footer-meta {
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* Wordmark */
+.wordmark {
+    font-family: 'Trirong', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-navy);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .manual-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Color Palette Page Styles */
+.swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.swatch-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+}
+
+.swatch-color {
+    width: 100%;
+    height: 120px;
+}
+
+.swatch-info {
+    padding: 1.5rem;
+}
+
+.swatch-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.swatch-hex {
+    font-family: monospace;
+    font-size: 0.95rem;
+    color: var(--color-harbor-gray);
+    margin-bottom: 0.75rem;
+}
+
+.swatch-usage {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-ink);
+}
+
+.criteria-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+}
+
+.criteria-content {
+    margin-top: 1.5rem;
+}
+
+.criteria-item {
+    margin-bottom: 2rem;
+}
+
+.criteria-item:last-child {
+    margin-bottom: 0;
+}
+
+.criteria-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+}
+
+.usage-list {
+    margin-top: 0.75rem;
+    padding-left: 1.5rem;
+}
+
+.usage-list li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.color-examples {
+    margin-bottom: 4rem;
+}
+
+.example-card {
+    margin-bottom: 2rem;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+}
+
+.example-header {
+    padding: 2rem;
+}
+
+.example-body {
+    padding: 2rem;
+}
+
+.print-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.print-spec-item {
+    background: var(--color-white);
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+}
+
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.spec-table th,
+.spec-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.spec-table th {
+    font-weight: 600;
+    color: var(--color-navy);
+    background: var(--color-light-paper);
+}
+
+.spec-table tr:last-child td {
+    border-bottom: none;
+}
+
+.pantone-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.pantone-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.pantone-list li:last-child {
+    border-bottom: none;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: var(--color-harbor-gray);
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Typography Page Styles */
+.hierarchy-example {
+    margin-top: 2rem;
+}
+
+.hierarchy-item {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.hierarchy-item:last-child {
+    border-bottom: none;
+}
+
+.hierarchy-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.label-name {
+    font-weight: 600;
+    color: var(--color-navy);
+}
+
+.label-specs {
+    font-family: monospace;
+    color: var(--color-harbor-gray);
+    font-size: 0.85rem;
+}
+
+.hierarchy-sample {
+    margin: 0;
+}
+
+.caption-sample {
+    color: var(--color-harbor-gray);
+    font-style: italic;
+}
+
+.wordmark-sample {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-navy);
+}
+
+.wordmark-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.wordmark-example {
+    background: var(--color-white);
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.wordmark-example h3 {
+    font-size: 1rem;
+    color: var(--color-harbor-gray);
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.wordmark-rules {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+}
+
+.text-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.text-spec-item {
+    background: var(--color-white);
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+}
+
+.bilingual-sample {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.bilingual-item {
+    background: var(--color-white);
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+}
+
+.bilingual-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.rule-item {
+    background: var(--color-white);
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+}
+
+.rule-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Application Page Styles */
+.application-rules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.rule-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+}
+
+.rule-card h3 {
+    padding: 1.5rem 1.5rem 1rem;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.example-box {
+    margin: 0;
+}
+
+.rule-description {
+    padding: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--color-ink);
+    margin: 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.background-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.bg-example {
+    margin-bottom: 2rem;
+}
+
+.bg-example h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.bg-description {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--color-harbor-gray);
+    font-style: italic;
+}
+
+.full-example {
+    margin-top: 2rem;
+    border: 1px solid var(--color-border);
+}
+
+.guidelines-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.guideline-item {
+    background: var(--color-white);
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+}
+
+.guideline-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.bg-spec {
+    margin-top: 2rem;
+}
+
+.bg-spec-item {
+    background: var(--color-white);
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+}
+
+.bg-spec-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Letterhead Page Styles */
+.letterhead-preview {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--color-light-paper);
+    border: 1px solid var(--color-border);
+}
+
+.letterhead-page {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.variations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.variation-item {
+    margin-bottom: 2rem;
+}
+
+.variation-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.variation-preview {
+    min-height: 200px;
+}
+
+/* Business Card Page Styles */
+.card-set {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.card-preview-container {
+    text-align: center;
+}
+
+.card-preview-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-preview {
+    transform: scale(1);
+    transition: transform 0.2s;
+}
+
+.card-preview:hover {
+    transform: scale(1.05);
+}
+
+/* Banner Page Styles */
+.banner-set {
+    display: grid;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.banner-item {
+    margin-bottom: 3rem;
+}
+
+.banner-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.banner-preview {
+    transition: transform 0.2s;
+}
+
+.banner-preview:hover {
+    transform: scale(1.02);
+}
+
+/* Symbols Page Styles */
+.symbols-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.symbol-card {
+    background: var(--color-white);
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+}
+
+.symbol-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.symbol-code {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--color-harbor-gray);
+    margin-bottom: 1rem;
+}
+
+.symbol-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-ink);
+    margin-bottom: 1rem;
+}
+
+.symbol-example {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--color-light-paper);
+    border-left: 3px solid var(--color-navy);
+}
+
+/* Slides Page Styles */
+.slide-container {
+    margin-bottom: 3rem;
+}
+
+.slide-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.slide {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media print {
+    .sidebar {
+        display: none;
+    }
+    
+    .content {
+        max-width: 100%;
+        padding: 2rem;
+    }
+}
+

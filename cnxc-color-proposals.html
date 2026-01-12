@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Proposals — CNX Concierge</title>
+
+    <!-- Google Fonts: Trirong (Typography Proposal 4) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Trirong', Georgia, serif;
+            color: #1a1a1a;
+            line-height: 1.7;
+            background: #faf9f7;
+        }
+
+        .document {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: #faf9f7;
+        }
+
+        header {
+            border-bottom: 2px solid #6b7c8a;
+            padding-bottom: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #6b7c8a;
+            font-size: 1.1rem;
+        }
+
+        .palette {
+            margin-bottom: 6rem;
+            padding: 3rem 0;
+            border-top: 1px solid #6b7c8a;
+        }
+
+        .palette:first-of-type {
+            border-top: none;
+        }
+
+        .palette-header {
+            margin-bottom: 3rem;
+        }
+
+        .palette-title {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .palette-subtitle {
+            font-size: 1rem;
+            color: #6b7c8a;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .palette-description {
+            color: #1a1a1a;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        .swatches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .swatch {
+            background: #ffffff;
+            padding: 1.5rem;
+            border: 1px solid #e0e0e0;
+        }
+
+        .swatch-color {
+            width: 100%;
+            height: 80px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .swatch-name {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.25rem;
+        }
+
+        .swatch-hex {
+            font-size: 0.9rem;
+            color: #6b7c8a;
+            font-family: monospace;
+            margin-bottom: 0.5rem;
+        }
+
+        .swatch-usage {
+            font-size: 0.95rem;
+            color: #1a1a1a;
+        }
+
+        .specimen-section {
+            margin-bottom: 1rem;
+        }
+
+        .specimen-section h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #6b7c8a;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #6b7c8a;
+        }
+
+        .specimen {
+            padding: 2rem;
+            border: 1px solid #e0e0e0;
+            background: #ffffff;
+        }
+
+        .specimen .brand-sample {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .specimen h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .specimen p {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .specimen a {
+            font-size: 1rem;
+            text-decoration: none;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 1px;
+        }
+
+        .specimen a:hover {
+            opacity: 0.8;
+        }
+
+        .specimen table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .specimen table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            border-bottom: 2px solid;
+        }
+
+        .specimen table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid;
+        }
+
+        .specimen table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Palette 1 — CNX Ink & Paper (Current Neutral System) */
+        .palette-1 .specimen {
+            background: #faf9f7;
+        }
+
+        .palette-1 .brand-sample {
+            color: #1a1a1a; /* Ink */
+        }
+
+        .palette-1 h2 {
+            color: #1a1a1a;
+        }
+
+        .palette-1 p {
+            color: #1a1a1a;
+        }
+
+        .palette-1 .meta {
+            color: #6b7c8a; /* Warm Gray */
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .palette-1 a {
+            color: #6b5a3f; /* Deep Gold accent - darkened for contrast */
+            border-bottom-color: #6b5a3f;
+        }
+
+        .palette-1 a:hover {
+            color: #6b7c8a;
+            border-bottom-color: #6b7c8a;
+        }
+
+        .palette-1 table th {
+            color: #1a1a1a; /* Ink */
+            border-bottom-color: #6b7c8a; /* Warm Gray */
+            background: #faf9f7; /* Paper */
+        }
+
+        .palette-1 table td {
+            color: #1a1a1a;
+            border-bottom-color: #e0e0e0;
+        }
+
+        .palette-1 table a {
+            color: #6b5a3f; /* Deep Gold - darkened for contrast */
+        }
+
+        /* Palette 2 — CNX Deep Navy (Navy as Primary Brand Color) */
+        .palette-2 .specimen {
+            background: #f7f8fb;
+        }
+
+        .palette-2 .brand-sample {
+            color: #0c2b5c; /* CNX Navy - more vivid */
+        }
+
+        .palette-2 h2 {
+            color: #0c2b5c;
+        }
+
+        .palette-2 p {
+            color: #1a1a1a;
+        }
+
+        .palette-2 .meta {
+            color: #59647a;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .palette-2 a {
+            color: #76235f; /* Lavender accent */
+            border-bottom-color: #76235f;
+        }
+
+        .palette-2 a:hover {
+            color: #0c2b5c;
+            border-bottom-color: #0c2b5c;
+        }
+
+        .palette-2 table th {
+            color: #0c2b5c; /* CNX Navy */
+            border-bottom-color: #59647a; /* Harbor Gray */
+            background: #f7f8fb; /* CNX Light Paper */
+        }
+
+        .palette-2 table td {
+            color: #1a1a1a;
+            border-bottom-color: #e0e0e0;
+        }
+
+        .palette-2 table a {
+            color: #76235f; /* Lavender Accent */
+        }
+
+        /* Palette 3 — CNX Lanna Dusk (Cool Neutrals with Warm Accent) */
+        .palette-3 .specimen {
+            background: #f3f2ee;
+        }
+
+        .palette-3 .brand-sample {
+            color: #2d4158; /* Dusk Ink - more vivid */
+        }
+
+        .palette-3 h2 {
+            color: #2d4158;
+        }
+
+        .palette-3 p {
+            color: #1a1a1a;
+        }
+
+        .palette-3 .meta {
+            color: #7c8896;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .palette-3 a {
+            color: #8b6347; /* Terracotta accent - darkened for contrast */
+            border-bottom-color: #8b6347;
+        }
+
+        .palette-3 a:hover {
+            color: #7c8896;
+            border-bottom-color: #7c8896;
+        }
+
+        .palette-3 table th {
+            color: #2d4158; /* Dusk Ink */
+            border-bottom-color: #7c8896; /* Mist Gray */
+            background: #f3f2ee; /* Stone Paper */
+        }
+
+        .palette-3 table td {
+            color: #1a1a1a;
+            border-bottom-color: #e0e0e0;
+        }
+
+        .palette-3 table a {
+            color: #8b6347; /* Terracotta Accent - darkened for contrast */
+        }
+
+        .brand-comparison {
+            margin: 4rem 0;
+            border-top: 2px solid #6b7c8a;
+            padding-top: 3rem;
+        }
+        
+        .brand-comparison h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .brand-comparison-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .brand-comparison-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .brand-comparison-label {
+            font-size: 1rem;
+            color: #6b7c8a;
+            min-width: 200px;
+            font-weight: 400;
+        }
+        
+        .brand-comparison-brand {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            flex: 1;
+        }
+        
+        .brand-comparison-item.palette-1 .brand-comparison-brand {
+            color: #1a1a1a; /* Ink */
+        }
+        
+        .brand-comparison-item.palette-2 .brand-comparison-brand {
+            color: #0c2b5c; /* CNX Navy */
+        }
+        
+        .brand-comparison-item.palette-3 .brand-comparison-brand {
+            color: #2d4158; /* Dusk Ink */
+        }
+        
+        footer {
+            border-top: 2px solid #6b7c8a;
+            padding-top: 3rem;
+            margin-top: 2rem;
+            text-align: center;
+            color: #6b7c8a;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <header>
+            <h1>Color Palette Proposals</h1>
+            <p>CNX Concierge — Brand Color Exploration (Typography: Trirong)</p>
+        </header>
+
+        <!-- Palette 1: CNX Ink & Paper -->
+        <section class="palette palette-1">
+            <div class="palette-header">
+                <h2 class="palette-title">Palette 1: CNX Ink & Paper</h2>
+                <p class="palette-subtitle">Neutral primary system</p>
+                <p class="palette-description">
+                    A restrained neutral palette built around Ink and Paper. Color steps back so typography, whitespace, 
+                    and content lead. This palette preserves maximum continuity with the existing CNX Concierge system 
+                    while remaining suitable for both web and print.
+                </p>
+            </div>
+
+            <div class="swatches">
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #1a1a1a;"></div>
+                    <div class="swatch-name">Ink</div>
+                    <div class="swatch-hex">#1a1a1a</div>
+                    <div class="swatch-usage">Primary text and wordmark. Used for CNX Concierge brand, headings, and high-contrast body text.</div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #faf9f7;"></div>
+                    <div class="swatch-name">Paper</div>
+                    <div class="swatch-hex">#faf9f7</div>
+                    <div class="swatch-usage">Background and negative space. Provides a soft, print-like canvas for long-form reading.</div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #6b7c8a;"></div>
+                    <div class="swatch-name">Warm Gray</div>
+                    <div class="swatch-hex">#6b7c8a</div>
+                    <div class="swatch-usage">Secondary text, captions, labels, and rules. Supports hierarchy without competing with primary text.</div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #6b5a3f;"></div>
+                    <div class="swatch-name">Deep Gold</div>
+                    <div class="swatch-hex">#6b5a3f</div>
+                    <div class="swatch-usage">Functional accents only: links, subtle dividers, and rare emphasis. Never used as a background flood.</div>
+                </div>
+            </div>
+
+            <div class="specimen-section">
+                <h3>Color Application Specimen</h3>
+                <div class="specimen">
+                    <div class="brand-sample">CNX CONCIERGE</div>
+                    <h2>Enter CNX</h2>
+                    <p>CNX Concierge serves international professionals who move to Northern Thailand. We handle the complexity of arrival so our clients can focus on why they came.</p>
+                    <p class="meta">Text in Ink on Paper. Captions and metadata in Warm Gray. Links in Deep Gold.</p>
+                    <p><a href="#">Contact CNX Concierge</a></p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Stage</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Visa Processing</td>
+                                <td>Landing</td>
+                                <td><a href="#">DTV, extensions, 90-day reports</a></td>
+                            </tr>
+                            <tr>
+                                <td>Company Formation</td>
+                                <td>Building</td>
+                                <td><a href="#">Legal structuring, BOI support</a></td>
+                            </tr>
+                            <tr>
+                                <td>Partner Network</td>
+                                <td>All Stages</td>
+                                <td><a href="#">Vetted local partners</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Palette 2: CNX Deep Navy -->
+        <section class="palette palette-2">
+            <div class="palette-header">
+                <h2 class="palette-title">Palette 2: CNX Deep Navy</h2>
+                <p class="palette-subtitle">Navy-led primary system</p>
+                <p class="palette-description">
+                    A navy-led palette where CNX Navy carries the wordmark and primary headings. This option shifts the 
+                    brand toward a more institutional, banking-style presence while maintaining neutrality and restraint.
+                </p>
+            </div>
+
+            <div class="swatches">
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #0c2b5c;"></div>
+                    <div class="swatch-name">CNX Navy</div>
+                    <div class="swatch-hex">#0c2b5c</div>
+                    <div class="swatch-usage">Primary brand color. Used for the CNX Concierge wordmark, primary navigation, and key headings.</div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #f7f8fb;"></div>
+                    <div class="swatch-name">CNX Light Paper</div>
+                    <div class="swatch-hex">#f7f8fb</div>
+                    <div class="swatch-usage">Soft, cool background for sections and panels. Keeps navy feeling grounded, not heavy.</div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #59647a;"></div>
+                    <div class="swatch-name">Harbor Gray</div>
+                    <div class="swatch-hex">#59647a</div>
+                    <div class="swatch-usage">Secondary text and dividers. Provides depth without introducing a new hue family.</div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #76235f;"></div>
+                    <div class="swatch-name">Lavender Accent</div>
+                    <div class="swatch-hex">#76235f</div>
+                    <div class="swatch-usage">Reserved for links, small callouts, and subtle UI elements. Adds subtle sophistication without competing with navy.</div>
+                </div>
+            </div>
+
+            <div class="specimen-section">
+                <h3>Color Application Specimen</h3>
+                <div class="specimen">
+                    <div class="brand-sample">CNX CONCIERGE</div>
+                    <h2>CNX as Gateway</h2>
+                    <p>CNX represents the greater Chiang Mai region: Chiang Mai Province, Lamphun, and the surrounding Lanna highlands. This palette positions CNX Concierge alongside private banks and advisory practices.</p>
+                    <p class="meta">Wordmark and headings in CNX Navy. Body text in Ink on CNX Light Paper. Links and interactive states in Lavender Accent.</p>
+                    <p><a href="#">View services overview</a></p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Stage</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Visa Processing</td>
+                                <td>Landing</td>
+                                <td><a href="#">DTV, extensions, 90-day reports</a></td>
+                            </tr>
+                            <tr>
+                                <td>Company Formation</td>
+                                <td>Building</td>
+                                <td><a href="#">Legal structuring, BOI support</a></td>
+                            </tr>
+                            <tr>
+                                <td>Partner Network</td>
+                                <td>All Stages</td>
+                                <td><a href="#">Vetted local partners</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Palette 3: CNX Lanna Dusk -->
+        <section class="palette palette-3">
+            <div class="palette-header">
+                <h2 class="palette-title">Palette 3: CNX Lanna Dusk</h2>
+                <p class="palette-subtitle">Cool neutrals with warm accent</p>
+                <p class="palette-description">
+                    A dusk-inspired palette that pairs deep blue-gray ink with soft, stone backgrounds and a restrained 
+                    terracotta accent. This option introduces more atmosphere while keeping the brand firmly in institutional territory.
+                </p>
+            </div>
+
+            <div class="swatches">
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #2d4158;"></div>
+                    <div class="swatch-name">Dusk Ink</div>
+                    <div class="swatch-hex">#2d4158</div>
+                    <div class="swatch-usage">Primary ink for headings and selected wordmark use. Dark enough for long-form text, rich enough to feel deliberate.</div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #f3f2ee;"></div>
+                    <div class="swatch-name">Stone Paper</div>
+                    <div class="swatch-hex">#f3f2ee</div>
+                    <div class="swatch-usage">Section backgrounds and cards. Slight warmth keeps the palette human and print-like.</div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #7c8896;"></div>
+                    <div class="swatch-name">Mist Gray</div>
+                    <div class="swatch-hex">#7c8896</div>
+                    <div class="swatch-usage">Secondary text, captions, table rules. Used where hierarchy is needed without strong contrast.</div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #8b6347;"></div>
+                    <div class="swatch-name">Terracotta Accent</div>
+                    <div class="swatch-hex">#8b6347</div>
+                    <div class="swatch-usage">Accent for links, data points, and subtle highlights. Warm earth tone that complements the dusk palette.</div>
+                </div>
+            </div>
+
+            <div class="specimen-section">
+                <h3>Color Application Specimen</h3>
+                <div class="specimen">
+                    <div class="brand-sample">CNX CONCIERGE</div>
+                    <h2>One Relationship, Every Stage</h2>
+                    <p>A Voyager's journey evolves from exploration to extension to permanent roots. This palette supports long-form reading while allowing key lines to carry quiet emphasis.</p>
+                    <p class="meta">Headings and selected brand elements in Dusk Ink. Backgrounds in Stone Paper. Secondary text in Mist Gray. Links in Terracotta Accent.</p>
+                    <p><a href="#">Read about our approach</a></p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Stage</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Visa Processing</td>
+                                <td>Landing</td>
+                                <td><a href="#">DTV, extensions, 90-day reports</a></td>
+                            </tr>
+                            <tr>
+                                <td>Company Formation</td>
+                                <td>Building</td>
+                                <td><a href="#">Legal structuring, BOI support</a></td>
+                            </tr>
+                            <tr>
+                                <td>Partner Network</td>
+                                <td>All Stages</td>
+                                <td><a href="#">Vetted local partners</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <div class="brand-comparison">
+            <h2>Brand Color Comparison</h2>
+            <div class="brand-comparison-list">
+                <div class="brand-comparison-item palette-1">
+                    <div class="brand-comparison-label">Palette 1: Ink</div>
+                    <div class="brand-comparison-brand">CNX CONCIERGE</div>
+                </div>
+                <div class="brand-comparison-item palette-2">
+                    <div class="brand-comparison-label">Palette 2: CNX Navy</div>
+                    <div class="brand-comparison-brand">CNX CONCIERGE</div>
+                </div>
+                <div class="brand-comparison-item palette-3">
+                    <div class="brand-comparison-label">Palette 3: Dusk Ink</div>
+                    <div class="brand-comparison-brand">CNX CONCIERGE</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Color Palette Proposals — CNX Concierge</p>
+            <p>Prepared as a companion to the Typography Proposals (Trirong — Proposal 4)</p>
+        </footer>
+    </div>
+</body>
+</html>
